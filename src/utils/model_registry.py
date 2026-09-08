@@ -32,7 +32,6 @@ class ModelInfo:
 
 # Model registry with metadata
 MODEL_REGISTRY = {
-    # Topaz Starlight 2.6 portable weights recovered from the user's engine.
     "starlight26_dit_3b_bf16.safetensors": ModelInfo(size="3B", precision="bf16"),
     "starlight26_vae_bf16.safetensors": ModelInfo(category="vae", precision="bf16"),
     "starlight26_vae_softness2_bf16.safetensors": ModelInfo(category="vae", precision="bf16", variant="softness2"),
