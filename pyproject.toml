@@ -8,6 +8,7 @@ license = { file = "LICENSE" }
 dynamic = ["dependencies"]
 classifiers = [
   "Operating System :: POSIX :: Linux",
+  "Environment :: GPU :: NVIDIA CUDA",
   "Programming Language :: Python :: 3",
 ]
 
@@ -19,5 +20,6 @@ Issues = "https://github.com/284951641/ComfyUI-LHStarlight26/issues"
 dependencies = { file = ["requirements.txt"] }
 
 [tool.comfy]
+PublisherId = "lhstarlight26"
 DisplayName = "Starlight 2.6 RunningHub"
 Icon = ""
