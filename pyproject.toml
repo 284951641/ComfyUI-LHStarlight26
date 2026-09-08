@@ -1,0 +1,23 @@
+[project]
+name = "starlight26-runninghub"
+version = "0.3.0"
+description = "Topaz Starlight 2.6 model adapter nodes for ComfyUI and RunningHub"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dynamic = ["dependencies"]
+classifiers = [
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Repository = "https://github.com/284951641/ComfyUI-LHStarlight26"
+Issues = "https://github.com/284951641/ComfyUI-LHStarlight26/issues"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.comfy]
+DisplayName = "Starlight 2.6 RunningHub"
+Icon = ""
