@@ -1,0 +1,5 @@
+{
+  "Starlight26LoadDiTModel": "Model loader",
+  "Starlight26LoadVAEModel": "Auxiliary model loader",
+  "Starlight26VideoUpscaler": "Video enhancement processor"
+}
