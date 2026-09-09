@@ -46,8 +46,7 @@ class Starlight26LoadVAEModel(io.ComfyNode):
                     default=DEFAULT_VAE,
                     tooltip=(
                         "VAE (Variational Autoencoder) model for encoding/decoding.\n"
-                        "Models automatically download on first use.\n"
-                        "Additional models can be added to the ComfyUI models folder."
+                        "Select a model already uploaded to the ComfyUI models folder."
                     )
                 ),
                 io.Combo.Input("device",

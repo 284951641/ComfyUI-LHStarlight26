@@ -357,10 +357,6 @@ def setup_generation_context(
     else:
         tensor_offload_device = _normalize_device(tensor_offload_device) if tensor_offload_device is not None else None
     
-    # Set LOCAL_RANK to 0 for single-GPU inference mode
-    # CLI multi-GPU uses CUDA_VISIBLE_DEVICES to restrict visibility per worker
-    os.environ.setdefault("LOCAL_RANK", "0")
-    
     # Detect ComfyUI integration for interrupt support
     try:
         import comfy.model_management
@@ -403,8 +399,7 @@ def setup_generation_context(
         debug.log(
             f"Generation context initialized: "
             f"DiT={str(dit_device)}, VAE={str(vae_device)}, "
-            f"Offload=[{offload_str}], "
-            f"LOCAL_RANK={os.environ['LOCAL_RANK']}",
+            f"Offload=[{offload_str}], single-GPU mode",
             category="setup"
         )
         if ctx['compute_dtype'] == torch.float32:

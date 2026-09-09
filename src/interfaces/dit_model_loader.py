@@ -45,8 +45,7 @@ class Starlight26LoadDiTModel(io.ComfyNode):
                     default=DEFAULT_DIT,
                     tooltip=(
                         "DiT (Diffusion Transformer) model for video upscaling.\n"
-                        "Models automatically download on first use.\n"
-                        "Additional models can be added to the ComfyUI models folder."
+                        "Select a model already uploaded to the ComfyUI models folder."
                     )
                 ),
                 io.Combo.Input("device",

@@ -1,7 +1,7 @@
 [project]
 name = "starlight26-runninghub"
-version = "1.0.0"
-description = "Topaz Starlight 2.6 model adapter nodes for ComfyUI and RunningHub"
+version = "1.0.1"
+description = "Starlight 2.6 video enhancement nodes for ComfyUI and RunningHub"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }

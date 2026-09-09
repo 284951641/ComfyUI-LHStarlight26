@@ -116,7 +116,6 @@ ensure_bitsandbytes_safe()
 
 
 import torch
-import os
 
 
 # Flash/Sage Attention & Triton Compatibility Layer
@@ -640,9 +639,8 @@ def _check_conv3d_memory_bug():
 NVIDIA_CONV3D_MEMORY_BUG_WORKAROUND = _check_conv3d_memory_bug()
 
 
-# Log all optimization status once globally (cross-process) using environment variable
-if not os.environ.get("SEEDVR2_OPTIMIZATIONS_LOGGED"):
-    os.environ["SEEDVR2_OPTIMIZATIONS_LOGGED"] = "1"
+# Log optimization status when this module is imported.
+if True:
     
     # Build status strings
     sage_status = "✅" if SAGE_ATTN_AVAILABLE else "❌"
@@ -952,4 +950,3 @@ class CompatibleDiT(torch.nn.Module):
                 setattr(self.dit_model, name, value)
             else:
                 super().__setattr__(name, value)
-                

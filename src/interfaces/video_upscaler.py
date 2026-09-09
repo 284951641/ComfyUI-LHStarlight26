@@ -7,7 +7,6 @@ import torch
 from comfy_api.latest import io
 from typing import Tuple, Dict, Any, Optional
 from ..utils.constants import get_base_cache_dir, __version__
-from ..utils.downloads import download_weight
 from ..utils.debug import Debug
 from ..core.generation_phases import (
     encode_all_batches, 
@@ -388,15 +387,6 @@ class Starlight26VideoUpscaler(io.ComfyNode):
         debug.log_memory_state("Before model preparation", show_tensors=False, detailed_tensors=False)
         debug.start_timer("model_preparation")
 
-        # Check if download succeeded
-        debug.log("Checking and downloading models if needed...", category="download")
-        if not download_weight(dit_model=dit_model, vae_model=vae_model, debug=debug):
-            raise RuntimeError(
-                f"Failed to download required model files. "
-                f"DiT model: {dit_model}, VAE model: {vae_model}. "
-                "Please check the console output above for specific file failures and manual download instructions."
-            )
-        
         try:
             # Initialize ComfyUI progress bar if available
             if ProgressBar is not None:
